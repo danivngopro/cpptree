@@ -289,8 +289,8 @@ bool ariel::Tree::contains(int i){
 
 //Returns the data in the root
 int ariel::Tree::root(){
-	cout << "getrootdata" << endl;
 	return treeRoot->getData();
+	cout << "done getrootdata" << endl;
 }
 
 //Parent function: input- value i, returns the data allocate above this value in the Tree
