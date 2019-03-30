@@ -73,7 +73,7 @@ treeSize= 0;
 ariel::Tree::~Tree(){
 	cout << "~tree" <<endl;
 	if(treeRoot!=nullptr)
-	treeRoot == nullptr;
+	delete treeRoot;
 	treeSize = 0;
 }
 
