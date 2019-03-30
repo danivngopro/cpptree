@@ -17,12 +17,12 @@ ariel::Node::Node(int data, Node* right, Node* left, Node* parent) :
          
 ariel::Node::~Node(){
 	if(left!=nullptr){
-		delete left;
 		left = nullptr;
+		delete left;
 }
 	if(right!=nullptr){
-		delete right;
 		right = nullptr;
+		delete right;
 }
 
 }
@@ -299,7 +299,7 @@ void ariel::Tree::print(Node* node){
 	if(node==nullptr) return;
 	else {
 		print(node->getLeft());
-		cout << " [ " << node->getData() << " ]";
+		cout << "[ " << node->getData() << " ] ";
 		print(node->getRight());
 	}
 }
