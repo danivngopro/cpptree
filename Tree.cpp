@@ -89,7 +89,6 @@ ariel::Tree::~Tree(){
 //this following function helps the contains function-
 //looks for the i value in the tree and return the node contains that
 Node* ariel::Tree::search(Node* leaf, int i){
-	cout << "search" <<endl;
 	if(leaf==nullptr){
 		//cout << "search result: didn't find number: " << i << endl;
 		return nullptr;	
