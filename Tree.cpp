@@ -88,6 +88,7 @@ ariel::Tree::~Tree(){
 //this following function helps the contains function-
 //looks for the i value in the tree and return the node contains that
 Node* ariel::Tree::search(Node* leaf, int i){
+	cout << "search" <<endl;
 	if(leaf==nullptr){
 		//cout << "search result: didn't find number: " << i << endl;
 		return nullptr;	
@@ -101,6 +102,7 @@ Node* ariel::Tree::search(Node* leaf, int i){
 }
 
 Node* ariel::Tree::minValue(Node* subtree){
+	cout << "minvalue" <<endl;
 	if(subtree==nullptr){
 		return nullptr;
 	}
@@ -279,6 +281,7 @@ int ariel::Tree::root(){
 
 //Parent function: input- value i, returns the data allocate above this value in the Tree
 int ariel::Tree::parent(int i){
+	cout << "parent" <<endl;
 	if(search(treeRoot, i) == nullptr) throw std::invalid_argument("error");
 	else if(search(treeRoot, i)->getParent() == nullptr) throw std::invalid_argument("error");
 	return search(treeRoot, i)->getParent()->getData();
@@ -286,6 +289,7 @@ int ariel::Tree::parent(int i){
 
 //Left function: input- value i, returns the left child's data of the input
 int ariel::Tree::left(int i){
+	cout << "leftchild" <<endl;
 	Node* current= search(treeRoot, i);
 	if(current == nullptr || current->getLeft() == nullptr) throw std::invalid_argument("error, no node or left child");
 	return current->getLeft()->getData();
@@ -293,12 +297,14 @@ int ariel::Tree::left(int i){
 
 //Right function: input- value i, returns the right child's data of the input
 int ariel::Tree::right(int i){
+	cout << "rightchild" <<endl;
 	Node* current= search(treeRoot, i);
 	if(current == nullptr || current->getRight() == nullptr) throw std::invalid_argument("error, no node or right child");
 	return current->getRight()->getData();
 }
 
 void ariel::Tree::print(Node* node){
+	cout << "print" <<endl;
 	if(node==nullptr) return;
 	else {
 		print(node->getLeft());
