@@ -16,6 +16,7 @@ ariel::Node::Node(int data, Node* right, Node* left, Node* parent) :
         data(data), right(right), left(left), parent(parent) {}
          
 ariel::Node::~Node(){
+	cout << "~node" <<endl;
 	if(left!=nullptr){
 		delete left;
 		left = nullptr;
@@ -70,6 +71,7 @@ treeSize= 0;
 
 //Destructor:
 ariel::Tree::~Tree(){
+	cout << "~tree" <<endl;
 	if(treeRoot!=nullptr)
 	treeRoot == nullptr;
 	treeSize = 0;
