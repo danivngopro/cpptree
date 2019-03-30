@@ -193,7 +193,8 @@ void ariel::Tree::remove(int i){
 	else if((toBeRemoved->getLeft()==nullptr) && (toBeRemoved->getRight()!=nullptr)){
 		//if this is the root
 		if(toBeRemoved->getParent()==nullptr){
-			treeRoot = nullptr;
+			treeRoot = toBeRemoved->getRight();
+			treeRoot->setParent(nullptr);
 			toBeRemoved = nullptr;
 			treeSize--;
 			return;
@@ -201,6 +202,7 @@ void ariel::Tree::remove(int i){
 		//if it is the left child
 		else if(toBeRemoved->getData() < toBeRemoved->getParent()->getData()){
 			toBeRemoved->getParent()->setLeft(toBeRemoved->getRight());
+			toBeRemoved->getRight()->setParent(toBeRemoved->getParent());
 			toBeRemoved = nullptr;
 			treeSize--;
 			return;
@@ -208,6 +210,7 @@ void ariel::Tree::remove(int i){
 		//if it is the right child
 		else if(toBeRemoved->getData() > toBeRemoved->getParent()->getData()){
 			toBeRemoved->getParent()->setRight(toBeRemoved->getRight());
+			toBeRemoved->getRight()->setParent(toBeRemoved->getParent());
 			toBeRemoved = nullptr;
 			treeSize--;
 			return;
@@ -219,6 +222,7 @@ void ariel::Tree::remove(int i){
 		//if this is the root
 		if(toBeRemoved->getParent()==nullptr){
 			treeRoot = toBeRemoved->getLeft();
+			treeRoot->setParent(nullptr);
 			toBeRemoved = nullptr;
 			treeSize--;
 			return;
@@ -226,13 +230,15 @@ void ariel::Tree::remove(int i){
 		//if it is the left child
 		else if(toBeRemoved->getData() < toBeRemoved->getParent()->getData()){
 			toBeRemoved->getParent()->setLeft(toBeRemoved->getLeft());
+			toBeRemoved->getLeft()->setParent(toBeRemoved->getParent());
 			toBeRemoved = nullptr;
 			treeSize--;
 			return;
 		}
 		//if it is the right child
-		else if(toBeRemoved->getData() > toBeRemoved->getParent()->getData()){
+		else if(toBeRemoved->getData() >= toBeRemoved->getParent()->getData()){
 			toBeRemoved->getParent()->setRight(toBeRemoved->getLeft());
+			toBeRemoved->getLeft()->setParent(toBeRemoved->getParent());
 			toBeRemoved = nullptr;
 			treeSize--;
 			return;
