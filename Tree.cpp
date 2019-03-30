@@ -167,7 +167,7 @@ void ariel::Tree::insert(int i){
 void ariel::Tree::remove(int i){
 	cout << "remove" << endl;
 	Node* toBeRemoved = search(treeRoot, i);
-	//cout << "thats the nodes data: " <<toBeRemoved->getData() << endl;
+	cout << "thats the nodes data: " <<toBeRemoved->getData() << endl;
 	if(contains(i) == false) {
 		cout << "end of delete alert" << endl;
 		throw std::invalid_argument("This Node doesnt exist");
@@ -239,7 +239,7 @@ void ariel::Tree::remove(int i){
 		if(toBeRemoved->getParent()==nullptr){
 			cout << "3.1" << endl;
 			treeRoot = toBeRemoved->getLeft();
-			treeRoot->setParent(nullptr);
+			toBeRemoved->getLeft()->setParent(nullptr);
 			toBeRemoved = nullptr;
 			treeSize--;
 			return;
