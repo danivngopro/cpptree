@@ -31,27 +31,35 @@ ariel::Node::~Node(){
 
 //Getters & Setters:
 void ariel::Node::setData(int data){
+	cout << "setdata" << endl;
 	this->data= data;
 }
 void ariel::Node::setRight(Node* newRight){
+	cout << "setright" << endl;
 	this->right= newRight;
 }
 void ariel::Node::setLeft(Node* newLeft){
+	cout << "setleft" << endl;
 	this->left= newLeft;
 }
 void ariel::Node::setParent(Node* newParent){
+	cout << "setparent" << endl;
 	this->parent= newParent;
 }
 int ariel::Node::getData() const{
+	cout << "getdata" << endl;
     return this->data;
 }
 Node* ariel::Node::getRight() const{
+	cout << "getright" << endl;
     return this->right;
 }
 Node* ariel::Node::getLeft() const{
+	cout << "getleft" << endl;
     return this->left;
 }
 Node* ariel::Node::getParent() const{
+	cout << "getparent" << endl;
 	return this->parent;
 }
 
@@ -65,15 +73,16 @@ Node* ariel::Node::getParent() const{
 
 //Empty Constructor:
 ariel::Tree::Tree(){
-treeRoot= nullptr;
-treeSize= 0;
+	cout << "treeconst" << endl;
+	treeRoot= nullptr;
+	treeSize= 0;
 }
 
 //Destructor:
 ariel::Tree::~Tree(){
 	cout << "~tree" <<endl;
 	if(treeRoot!=nullptr)
-	delete treeRoot;
+	treeRoot == nullptr;
 	treeSize = 0;
 }
 
@@ -115,7 +124,7 @@ Node* ariel::Tree::minValue(Node* subtree){
 //Public Methods:
 
 Node* ariel::Tree::insert(Node* node, int i){
-	cout << "insert" << endl;
+	cout << "insertn" << endl;
 	if(node != nullptr){
 		if(i < node->getData()) {
 			if(node->getLeft() == nullptr){
@@ -142,6 +151,7 @@ Node* ariel::Tree::insert(Node* node, int i){
 }
 //Insert function: input- number i, insert the number to it location in the Tree
 void ariel::Tree::insert(int i){
+		cout << "insert" << endl;
 		if(treeRoot == nullptr){
 			treeRoot = new Node(i);
 			treeSize++;
@@ -276,7 +286,8 @@ bool ariel::Tree::contains(int i){
 
 //Returns the data in the root
 int ariel::Tree::root(){
-    return treeRoot->getData();
+	cout << "getrootdata" << endl;
+	return treeRoot->getData();
 }
 
 //Parent function: input- value i, returns the data allocate above this value in the Tree
