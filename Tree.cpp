@@ -324,7 +324,6 @@ void ariel::Tree::print(Node* node){
 		cout << " [ " << node->getData() << " ]";
 		print(node->getRight());
 	}
-	cout << "done printing" << endl;
 }
 
 //Print the Tree
@@ -332,6 +331,6 @@ void ariel::Tree::print(){
 	if(treeRoot ==nullptr) cout << "the tree is empty" << endl;
 	else{
 		print(treeRoot);   
-		cout << "" <<endl;
+		cout << "done printing" << endl;
 	}
 }
