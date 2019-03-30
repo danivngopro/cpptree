@@ -154,14 +154,16 @@ void ariel::Tree::insert(int i){
 			treeRoot = new Node(i);
 			treeSize++;
 			treeRoot->setParent(nullptr);
+			cout << "end of insert" << endl;
 		}
 		else if (contains(i)){
+			cout << "end of insert" << endl;
 			throw std::invalid_argument("This number aleady exist");
 		}
 		else{
 			insert(treeRoot, i);
+			cout << "end of insert" << endl;
 		}
-		cout << "end of insert" << endl;
 }
 
 
@@ -173,7 +175,7 @@ void ariel::Tree::remove(int i){
 	Node* toBeRemoved = search(treeRoot, i);
 	//cout << "thats the nodes data: " <<toBeRemoved->getData() << endl;
 	if(contains(i) == false) {
-		cout << i << endl;
+		cout << "end of delete alert" << endl;
 		throw std::invalid_argument("This Node doesnt exist");
 	}
 	//case 1: node to be deleted is leaf:
