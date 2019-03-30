@@ -167,7 +167,7 @@ void ariel::Tree::insert(int i){
 void ariel::Tree::remove(int i){
 	cout << "remove" << endl;
 	Node* toBeRemoved = search(treeRoot, i);
-	cout << "thats the nodes data: " <<toBeRemoved->getData() << endl;
+	//cout << "thats the nodes data: " <<toBeRemoved->getData() << endl;
 	if(contains(i) == false) {
 		cout << "end of delete alert" << endl;
 		throw std::invalid_argument("This Node doesnt exist");
@@ -175,16 +175,16 @@ void ariel::Tree::remove(int i){
 	//case 1: node to be deleted is leaf:
 	if(toBeRemoved->getLeft()==nullptr && toBeRemoved->getRight()==nullptr){
 		//if this is the root
-		cout << "1" << endl;
+		//cout << "is this the root?" << endl;
 		if(toBeRemoved->getParent()==nullptr){
-			cout << "1.1" << endl;
+			cout << "yes it is" << i << endl;
 			treeRoot = toBeRemoved = nullptr;
 			treeSize--;
 			return;
 		}
 		//if it is the left child
 		else if(toBeRemoved->getData() < toBeRemoved->getParent()->getData()){
-		cout << "1.2" << endl;
+		//cout << "2" << endl;
 			toBeRemoved->getParent()->setLeft(nullptr);
 			toBeRemoved = nullptr;
 			treeSize--;
@@ -192,7 +192,7 @@ void ariel::Tree::remove(int i){
 		}
 		//if it is the right child
 		else{
-			cout << "1.3" << endl;
+			//cout << "3" << endl;
 			toBeRemoved->getParent()->setRight(nullptr);
 			toBeRemoved = nullptr;
 			treeSize--;
@@ -203,9 +203,7 @@ void ariel::Tree::remove(int i){
 	//case 2: node to be deleted has only right child:
 	else if((toBeRemoved->getLeft()==nullptr) && (toBeRemoved->getRight()!=nullptr)){
 		//if this is the root
-		cout << "2" << endl;
 		if(toBeRemoved->getParent()==nullptr){
-			cout << "2.1" << endl;
 			treeRoot = toBeRemoved->getRight();
 			treeRoot->setParent(nullptr);
 			toBeRemoved = nullptr;
@@ -214,7 +212,6 @@ void ariel::Tree::remove(int i){
 		}
 		//if it is the left child
 		else if(toBeRemoved->getData() < toBeRemoved->getParent()->getData()){
-			cout << "2.2" << endl;
 			toBeRemoved->getParent()->setLeft(toBeRemoved->getRight());
 			toBeRemoved->getRight()->setParent(toBeRemoved->getParent());
 			toBeRemoved = nullptr;
@@ -223,7 +220,6 @@ void ariel::Tree::remove(int i){
 		}
 		//if it is the right child
 		else if(toBeRemoved->getData() > toBeRemoved->getParent()->getData()){
-			cout << "2.3" << endl;
 			toBeRemoved->getParent()->setRight(toBeRemoved->getRight());
 			toBeRemoved->getRight()->setParent(toBeRemoved->getParent());
 			toBeRemoved = nullptr;
@@ -234,10 +230,8 @@ void ariel::Tree::remove(int i){
 	
 	//case 3: node to be deleted has only left child:
 	else if((toBeRemoved->getLeft()!=nullptr) && (toBeRemoved->getRight()==nullptr)){
-		cout << "3" << endl;
 		//if this is the root
 		if(toBeRemoved->getParent()==nullptr){
-			cout << "3.1" << endl;
 			treeRoot = toBeRemoved->getLeft();
 			treeRoot->setParent(nullptr);
 			toBeRemoved = nullptr;
@@ -246,7 +240,6 @@ void ariel::Tree::remove(int i){
 		}	
 		//if it is the left child
 		else if(toBeRemoved->getData() < toBeRemoved->getParent()->getData()){
-			cout << "3.2" << endl;
 			toBeRemoved->getParent()->setLeft(toBeRemoved->getLeft());
 			toBeRemoved->getLeft()->setParent(toBeRemoved->getParent());
 			toBeRemoved = nullptr;
@@ -255,7 +248,6 @@ void ariel::Tree::remove(int i){
 		}
 		//if it is the right child
 		else if(toBeRemoved->getData() >= toBeRemoved->getParent()->getData()){
-			cout << "3.3" << endl;
 			toBeRemoved->getParent()->setRight(toBeRemoved->getLeft());
 			toBeRemoved->getLeft()->setParent(toBeRemoved->getParent());
 			toBeRemoved = nullptr;
@@ -267,7 +259,6 @@ void ariel::Tree::remove(int i){
 	//case 4: node to be deleted has two children:
 	//get the inorder successor (smallest in the right subtree) 
 	else{
-		cout << "4" << endl;
 		Node* temp = minValue(toBeRemoved->getRight());
 		int valueToRemove = temp->getData();
 		remove(valueToRemove);
