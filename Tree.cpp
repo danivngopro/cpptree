@@ -17,12 +17,12 @@ ariel::Node::Node(int data, Node* right, Node* left, Node* parent) :
          
 ariel::Node::~Node(){
 	if(left!=nullptr){
-		left = nullptr;
 		delete left;
+		left = nullptr;
 }
 	if(right!=nullptr){
-		right = nullptr;
 		delete right;
+		right = nullptr;
 }
 
 }
@@ -71,7 +71,7 @@ treeSize= 0;
 //Destructor:
 ariel::Tree::~Tree(){
 	if(treeRoot!=nullptr)
-	delete treeRoot;
+	treeRoot == nullptr;
 	treeSize = 0;
 }
 
@@ -265,6 +265,7 @@ int ariel::Tree::size(){
 
 //Search function: if the tree contains the value of i- returns true.
 bool ariel::Tree::contains(int i){
+	cout << "contains" << endl;
 	if (search(treeRoot, i)== nullptr) return false;
 	else return true;
 }
@@ -299,7 +300,7 @@ void ariel::Tree::print(Node* node){
 	if(node==nullptr) return;
 	else {
 		print(node->getLeft());
-		cout << "[ " << node->getData() << " ] ";
+		cout << " [ " << node->getData() << " ]";
 		print(node->getRight());
 	}
 }
