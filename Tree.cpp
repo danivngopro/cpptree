@@ -111,6 +111,7 @@ Node* ariel::Tree::minValue(Node* subtree){
 //Public Methods:
 
 Node* ariel::Tree::insert(Node* node, int i){
+	cout << "insert" << endl;
 	if(node != nullptr){
 		if(i < node->getData()) {
 			if(node->getLeft() == nullptr){
@@ -155,6 +156,7 @@ void ariel::Tree::insert(int i){
 //Remove function: input- number i, remove the node holds this number in the tree
 //Throw exceptions if this number does not exist
 void ariel::Tree::remove(int i){
+	cout << "remove" << endl;
 	Node* toBeRemoved = search(treeRoot, i);
 	//cout << "thats the nodes data: " <<toBeRemoved->getData() << endl;
 	if(contains(i) == false) {
