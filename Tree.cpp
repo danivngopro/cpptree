@@ -164,7 +164,7 @@ void ariel::Tree::remove(int i){
 	//case 1: node to be deleted is leaf:
 	if(toBeRemoved->getLeft()==nullptr && toBeRemoved->getRight()==nullptr){
 		//if this is the root
-		cout << "is this the root?" << endl;
+		//cout << "is this the root?" << endl;
 		if(toBeRemoved->getParent()==nullptr){
 			cout << "yes it is" << i << endl;
 			treeRoot = toBeRemoved = nullptr;
