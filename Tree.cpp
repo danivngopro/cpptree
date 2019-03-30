@@ -304,7 +304,6 @@ int ariel::Tree::right(int i){
 }
 
 void ariel::Tree::print(Node* node){
-	cout << "print" <<endl;
 	if(node==nullptr) return;
 	else {
 		print(node->getLeft());
@@ -315,6 +314,7 @@ void ariel::Tree::print(Node* node){
 
 //Print the Tree
 void ariel::Tree::print(){
+	cout << "print" <<endl;
 	if(treeRoot ==nullptr) cout << "the tree is empty darling" << endl;
 	else{
 		print(treeRoot);   
