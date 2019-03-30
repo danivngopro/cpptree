@@ -1,5 +1,4 @@
 #pragma once
-
 #include <string>
 #include <iostream>
 
@@ -15,25 +14,24 @@ class Node {
         Node* parent;        
         
     public:
-        Node();
+        Node(); 
         Node(int data);
         Node(int data, Node* right, Node* left, Node* parent);
-
-	       ~Node();
-
-         //Getters and Setters of Node 
-  //      void setData(int data);
-    //    void setRight(Node* newRight);
-      //  void setLeft(Node* newLeft);
-	   //    void setParent(Node* newParent);
-     //   int getData() const;
-       // Node* getRight() const;
-       // Node* getLeft() const;
-	 //      Node* getParent() const;
-
         
-      
-};
+        ~Node();
+        
+        //Getters and Setters of Node 
+        void setData(int data);
+        void setRight(Node* newRight);
+        void setLeft(Node* newLeft);
+        void setParent(Node* newParent);
+        int getData() const;
+        Node* getRight() const;
+        Node* getLeft() const;
+        Node* getParent() const;
+	
+
+}; //end Node
 
 class Tree {
 
@@ -41,10 +39,10 @@ class Tree {
         uint treeSize;
      /*Private Methods*/
         Node* destroyTree(Node* node);
-        Node* insert(Node* leaf, int i);
+        Node* insert(Node* node, int i);
         Node* search(Node* leaf, int i);
-        void setSize(int i);
-        Node* getRoot();
+        Node* minValue(Node* subtree);
+	    void print(Node* node);
 
     public:
 
@@ -56,6 +54,7 @@ class Tree {
     
         /*Public Methods*/
         
+	
         //insert the number i to the correct node in the binary tree
         void insert(int i); //throw exception when already axist
         //remove the number i from the tree
@@ -74,7 +73,7 @@ class Tree {
         int right(int i);
         //print the tree
         void print();
-        
-        
-};//end class Tree
-} //end namespace ariel
+
+    
+};//end Tree
+} //end namespace
