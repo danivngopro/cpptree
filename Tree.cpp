@@ -51,11 +51,9 @@ int ariel::Node::getData() const{
     return this->data;
 }
 Node* ariel::Node::getRight() const{
-	cout << "getright" << endl;
     return this->right;
 }
 Node* ariel::Node::getLeft() const{
-	cout << "getleft" << endl;
     return this->left;
 }
 Node* ariel::Node::getParent() const{
