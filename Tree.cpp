@@ -161,6 +161,7 @@ void ariel::Tree::insert(int i){
 		else{
 			insert(treeRoot, i);
 		}
+		cout << "end of insert" << endl;
 }
 
 
@@ -267,7 +268,7 @@ void ariel::Tree::remove(int i){
 		remove(valueToRemove);
 		toBeRemoved->setData(valueToRemove);
 	}//end 4 case
-	
+	cout << "end of remove" << endl;
 }//end remove
 
 //Return the size of the Tree:
