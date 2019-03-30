@@ -324,6 +324,7 @@ void ariel::Tree::print(Node* node){
 		cout << " [ " << node->getData() << " ]";
 		print(node->getRight());
 	}
+	cout << "done printing" << endl;
 }
 
 //Print the Tree
