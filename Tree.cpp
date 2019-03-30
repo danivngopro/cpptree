@@ -31,23 +31,18 @@ ariel::Node::~Node(){
 
 //Getters & Setters:
 void ariel::Node::setData(int data){
-	cout << "setdata" << endl;
 	this->data= data;
 }
 void ariel::Node::setRight(Node* newRight){
-	cout << "setright" << endl;
 	this->right= newRight;
 }
 void ariel::Node::setLeft(Node* newLeft){
-	cout << "setleft" << endl;
 	this->left= newLeft;
 }
 void ariel::Node::setParent(Node* newParent){
-	cout << "setparent" << endl;
 	this->parent= newParent;
 }
 int ariel::Node::getData() const{
-	cout << "getdata" << endl;
     return this->data;
 }
 Node* ariel::Node::getRight() const{
@@ -57,7 +52,6 @@ Node* ariel::Node::getLeft() const{
     return this->left;
 }
 Node* ariel::Node::getParent() const{
-	cout << "getparent" << endl;
 	return this->parent;
 }
 
@@ -326,8 +320,7 @@ void ariel::Tree::print(Node* node){
 
 //Print the Tree
 void ariel::Tree::print(){
-	cout << "print" <<endl;
-	if(treeRoot ==nullptr) cout << "the tree is empty darling" << endl;
+	if(treeRoot ==nullptr) cout << "the tree is empty" << endl;
 	else{
 		print(treeRoot);   
 		cout << "" <<endl;
