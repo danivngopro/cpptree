@@ -290,7 +290,7 @@ bool ariel::Tree::contains(int i){
 //Returns the data in the root
 int ariel::Tree::root(){
 	cout << "getrootdata" << endl;
-	return treeRoot->getData();
+	return 0;
 	cout << "done getrootdata" << endl;
 }
 
